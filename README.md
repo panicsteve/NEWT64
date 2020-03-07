@@ -1,3 +1,11 @@
+
+**This code is in the progress of being rewritten for 64bit**
+
+* done: convert all Xcode projects to 64bit
+* TODO: move build environment ot cmake
+* TODO: 
+
+
 * NEWT / 0 for 
 
 NEWT / 0 Apple's PDA "Newton" was in the running of the original prototype 

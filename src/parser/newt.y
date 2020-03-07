@@ -137,7 +137,7 @@ and or			論理AND, 論理OR				→
 */
 
 %right		<op>	kASNOP			// 代入							←
-%left		<op>	kANDOP, kOROP	// 論理AND, 論理OR				→
+%left		<op>	kANDOP kOROP	// 論理AND, 論理OR				→
 %left		<op>	kNOTOP			// 論理否定						→
 %left		<op>	kRELOP			// 比較							→
 %left		<op>	kEXISTS			// 変数・スロットの存在確認			なし
