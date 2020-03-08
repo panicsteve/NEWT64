@@ -125,7 +125,7 @@ enum {
 /* 型宣言 */
 
 // Ref(Integer, Pointer, Charcter, Spatial, Magic pointer)
-typedef uint32_t		newtRef;		///< オブジェクト参照
+typedef uint64_t		newtRef;		///< オブジェクト参照
 typedef newtRef			newtRefVar;		///< オブジェクト参照変数
 typedef const newtRef	newtRefArg;		///< オブジェクト参照引数
 
@@ -135,7 +135,7 @@ typedef struct newtObj *	newtObjRef;
 
 /// オブジェクトヘッダ
 typedef struct {
-    uint32_t	h;		///< 管理情報
+    uint32_t	size, flags;		///< 管理情報
     newtObjRef	nextp;	///< 次のオブジェクトへのポインタ
 } newtObjHeader;
 

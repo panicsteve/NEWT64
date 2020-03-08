@@ -316,17 +316,17 @@ void PgkWriteVarData(pkg_stream_t *pkg, uint32_t offset, newtRefVar frame, newtR
 		return;
 	info = NewtGetFrameSlot(frame, ix);
 	if (NewtRefIsBinary(info)) {
-		uint32_t size = NewtBinaryLength(info);
+		size_t size = NewtBinaryLength(info);
 		uint8_t *data = NewtRefToBinary(info);
 		pkg_info_ref_t info_ref;
 
 #		ifdef HAVE_LIBICONV
 			if (NewtRefIsString(info)) {
 				size_t buflen;
-				char *buf = NewtIconv(pkg->to_utf16, data, size, &buflen);
+				char *buf = NewtIconv(pkg->to_utf16, (char*)data, size, &buflen);
 				if (buf) {
 					size = buflen;
-					data = buf;
+					data = (uint8_t*)buf;
 				}
 			}
 #		endif /* HAVE_LIBICONV */
@@ -334,7 +334,7 @@ void PgkWriteVarData(pkg_stream_t *pkg, uint32_t offset, newtRefVar frame, newtR
 		info_ref.offset = htons(pkg->var_data_size);
 		info_ref.size = htons(size);
 
-		PkgWriteData(pkg, pkg->header_size + pkg->var_data_size, data, size);
+		PkgWriteData(pkg, pkg->header_size + pkg->var_data_size, data, (uint32_t)size);
 		PkgWriteData(pkg, offset, &info_ref, 4);
 
 		pkg->var_data_size += size;		

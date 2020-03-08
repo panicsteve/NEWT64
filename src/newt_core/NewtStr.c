@@ -122,7 +122,7 @@ newtRef NewtParamStr(char * baseStr, size_t baseStrLen, newtRefArg paramStrArray
 
 				fst = fpos;
 
-				r = NewtGetArraySlot(paramStrArray, n);
+				r = NewtGetArraySlot(paramStrArray, (uint32_t)n);
 
 				if (NewtRefIsNotNIL(r))
 				{
@@ -167,8 +167,8 @@ bool NewtBeginsWith(const char * str, const char * sub)
 	int32_t	len;
 	int32_t	sublen;
 
-	len = strlen(str);
-	sublen = strlen(sub);
+	len = (int32_t)strlen(str);
+	sublen = (int32_t)strlen(sub);
 
 	if (len < sublen)
 		return false;
@@ -327,7 +327,7 @@ newtRef NsSplit(newtRefArg rcvr, newtRefArg r, newtRefArg sep)
 					next = strchr(s, c);
 					if (next == NULL) break;
 
-					v = NewtMakeString2(s, next - s, false);
+					v = NewtMakeString2(s, (uint32_t)(next - s), false);
 					NcAddArraySlot(result, v);
 					s = next + 1;
 				}
@@ -421,8 +421,8 @@ newtRef NsStrReplace(newtRefArg rcvr, newtRefArg string, newtRefArg substr, newt
   // count == nil ? replace all occurences
   
   
-  len_with = strlen(with);
-  len_rep = strlen(rep);
+  len_with = (uint32_t)strlen(with);
+  len_rep = (uint32_t)strlen(rep);
   
   if (len_rep == 0) {
     return NewtMakeInteger(0);

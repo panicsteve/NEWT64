@@ -381,8 +381,8 @@ uint16_t NewtGetObjectType(newtObjRef obj, bool detail)
 
 uint32_t NewtObjCalcDataSize(uint32_t n)
 {
-    if (n < 4)
-        return 4;
+    if (n < 8)
+        return 8;
     else
         return n;
 }
@@ -405,7 +405,7 @@ newtObjRef NewtObjMemAlloc(newtPool pool, uint32_t n, bool literal)
 
     if (literal)
     {
-        newSize = NewtAlign(sizeof(newtObj) + n, 4);
+        newSize = NewtAlign(sizeof(newtObj) + n, 8);
         obj = NewtObjChainAlloc(pool, newSize, 0);
     }
     else
@@ -436,10 +436,11 @@ newtObjRef NewtObjAlloc(newtRefArg r, uint32_t n, uint16_t type, bool literal)
     obj = NewtObjMemAlloc(NEWT_POOL, n, literal);
     if (obj == NULL) return NULL;
 
-    obj->header.h |= (n << 8) | type;
+    obj->header.size = n;
+    obj->header.flags |= type;
 
     if (NEWT_SWEEP)
-        obj->header.h |= kNewtObjSweep;
+        obj->header.flags |= kNewtObjSweep;
 
     if ((type & kNewtObjFrame) != 0)
         obj->as.map = r;
@@ -484,7 +485,8 @@ newtObjRef NewtObjRealloc(newtPool pool, newtObjRef obj, uint32_t n)
     if (data != *datap)
         *datap = data;
 
-    obj->header.h = ((n << 8) | (obj->header.h & 0xff));
+    obj->header.size = n;
+    obj->header.flags = obj->header.flags;
 
     return obj;
 }
@@ -656,7 +658,7 @@ newtRef NewtPackLiteral(newtRefArg r)
                 }
             }
 
-            newObj->header.h |= kNewtObjLiteral;
+            newObj->header.flags |= kNewtObjLiteral;
 
             // obj を free してはいけない
             // GC にまかせる
@@ -1156,7 +1158,7 @@ bool NewtRefIsRegex(newtRefArg r)
 void * NewtRefToAddress(newtRefArg r)
 {
 	if (NewtRefIsInteger(r))
-		return (void *)(((uint32_t)NewtRefToInteger(r)) << NOBJ_ADDR_SHIFT);
+        return (void *)((uintptr_t)(r&~2));
 	else
 		return NULL;
 }
@@ -1850,7 +1852,8 @@ newtRef NewtSetLength(newtRefArg r, uint32_t n)
 
 newtRef NewtMakeAddress(void * addr)
 {
-	return NewtMakeInteger(((uint32_t)addr) >> NOBJ_ADDR_SHIFT);
+    // Create an integer with the upper 62 bits containing the 4 byte aligned address
+    return (newtRef)(((uintptr_t)addr)&~3);
 }
 
 
@@ -4027,7 +4030,7 @@ void * NewtRefToNativeFn(newtRefArg r)
     fn = NcGetSlot(r, NSSYM0(funcPtr));
 
     if (NewtRefIsInteger(fn))
-        return (void *)NewtRefToInteger(fn);
+        return NewtRefToAddress(fn);
     else
         return NULL;
 }
@@ -4331,7 +4334,7 @@ newtRef NewtStrCat(newtRefArg r, char * s)
  * @return			文字列オブジェクト
  */
 
-newtRef NewtStrCat2(newtRefArg r, char * s, uint32_t slen)
+newtRef NewtStrCat2(newtRefArg r, char * s, size_t slen)
 {
     newtObjRef	obj;
 

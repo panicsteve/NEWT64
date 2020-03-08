@@ -171,7 +171,8 @@ newtObjRef NewtObjChainAlloc(newtPool pool, size_t size, size_t dataSize)
     }
     else
     {
-        obj->header.h = kNewtObjLiteral;
+        obj->header.size = 0;
+        obj->header.flags = kNewtObjLiteral;
     }
 
     if (pool != NULL)
@@ -387,9 +388,9 @@ void NewtGCRefMark(newtRefArg r, bool mark)
         if (! NewtObjIsLiteral(obj) && NewtObjIsSweep(obj, mark))
         {
             if (mark)
-                obj->header.h &= ~ (uint32_t)kNewtObjSweep;
+                obj->header.flags &= ~ (uint32_t)kNewtObjSweep;
             else
-                obj->header.h |= kNewtObjSweep;
+                obj->header.flags |= kNewtObjSweep;
 
             if (NewtObjIsSlotted(obj))
             {

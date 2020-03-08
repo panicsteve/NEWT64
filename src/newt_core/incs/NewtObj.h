@@ -29,8 +29,8 @@
 #define	NewtMakeInt30(v)			(newtRef)((int32_t)(v) << 2)		///< 30bit整数オブジェクトを作成
 
 #define	NewtRefIsPointer(r)			((r & 3) == 1)						///< ポインタオブジェクトか？
-#define	NewtRefToPointer(r)			(newtObjRef)((uint32_t)r - 1)		///< オブジェクト参照をポインタに変換
-#define	NewtMakePointer(v)			(newtRef)((uint32_t)(v) + 1)		///< ポインタオブジェクトを作成
+#define	NewtRefToPointer(r)			(newtObjRef)((uintptr_t)r - 1)		///< オブジェクト参照をポインタに変換
+#define	NewtMakePointer(v)			(newtRef)((uintptr_t)(v) + 1)		///< ポインタオブジェクトを作成
 
 #define	NewtRefIsCharacter(r)		((r & 0xF) == 6)					///< 文字オブジェクトか？
 #define	NewtRefToCharacter(r)		(int)(((uint32_t)r >> 4) & 0xFFFF)	///< オブジェクト参照を文字に変換
@@ -66,13 +66,13 @@
 #define	NewtFrameLength(r)			NewtSlotsLength(r)					///< フレームの長さを取得
 
 //
-#define	NewtObjType(v)				(v->header.h & 3)						///< オブジェクトタイプを取得
-#define	NewtObjIsSlotted(v)			((v->header.h & kNewtObjSlotted) != 0)  ///< オブジェクトデータがスロットか？
+#define	NewtObjType(v)				(v->header.flags & 3)						///< オブジェクトタイプを取得
+#define	NewtObjIsSlotted(v)			((v->header.flags & kNewtObjSlotted) != 0)  ///< オブジェクトデータがスロットか？
 #define	NewtObjIsArray(v)			(NewtObjType(v) == 1)					///< オブジェクトデータが配列か？
 #define	NewtObjIsFrame(v)			(NewtObjType(v) == 3)					///< オブジェクトデータがフレームか？
-#define NewtObjIsLiteral(v)			((v->header.h & kNewtObjLiteral) == kNewtObjLiteral)		///< リテラルか？
-#define NewtObjIsSweep(v, mark)		(((v->header.h & kNewtObjSweep) == kNewtObjSweep) == mark)  ///< スウィープ対象か？
-#define	NewtObjSize(v)				(v->header.h >> 8)					///< オブジェクトデータのサイズを取得
+#define NewtObjIsLiteral(v)			((v->header.flags & kNewtObjLiteral) == kNewtObjLiteral)		///< リテラルか？
+#define NewtObjIsSweep(v, mark)		(((v->header.flags & kNewtObjSweep) == kNewtObjSweep) == mark)  ///< スウィープ対象か？
+#define	NewtObjSize(v)				(v->header.size)					///< オブジェクトデータのサイズを取得
 #define NewtObjBinaryClass(v)		(v->as.klass)						///< Low-level API. Use NewtObjClassOf when needed.
 #define NewtObjArrayClass(v)		(v->as.klass)						///< Low-level API. Use NewtObjClassOf when needed.
 #define	NewtObjToBinary(v)			((uint8_t *)NewtObjData(v))			///< バイナリデータ部へのポインタ
@@ -256,7 +256,7 @@ bool		NewtIsSubclass(newtRefArg sub, newtRefArg supr);
 bool		NewtIsInstance(newtRefArg obj, newtRefArg r);
 
 newtRef		NewtStrCat(newtRefArg r, char * s);
-newtRef		NewtStrCat2(newtRefArg r, char * s, uint32_t slen);
+newtRef		NewtStrCat2(newtRefArg r, char * s, size_t slen);
 
 newtRef		NewtGetEnv(const char * s);
 
