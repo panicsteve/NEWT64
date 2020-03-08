@@ -197,9 +197,9 @@ NewtonScrip Native Code Support (717006)
 * `FAirusWalkDictionary`
 * `FAnimateSimpleStroke__FRC6RefVarN31`
 * `FAppleTalkOpenCount`
-* `FApply`
+* `FApply`: part of _newt64_
 * `FAref`
-* `FArray`
+* `FArray`: part of _newt64_
 * `FArrayInsert`
 * `FArrayMunger`
 * `FArrayPos`
@@ -226,7 +226,7 @@ NewtonScrip Native Code Support (717006)
 * `FBatteryLevel__FRC6RefVarT1`
 * `FBatteryRawStatus`
 * `FBatteryStatus`
-* `FBeginsWith`
+* `FBeginsWith`: part of _newt64_
 * `FBinEqual`
 * `FBinaryMunger`
 * `FBitAnd`
@@ -245,7 +245,7 @@ NewtonScrip Native Code Support (717006)
 * `FBuildContext`
 * `FBuildRecConfig`
 * `FBusyBoxControl`
-* `FCHR`
+* `FCHR`: part of _newt64_
 * `FCalcBundleBounds`
 * `FCalcInkBounds`
 * `FCalibrateTablet__FRC6RefVar`
@@ -280,7 +280,7 @@ NewtonScrip Native Code Support (717006)
 * `FCollapseTopic`
 * `FCollect`
 * `FCommandKeyboardConnected`
-* `FCompile`
+* `FCompile`: part of _newt64_
 * `FCompressStrokes`
 * `FCompressStrokesToInk`
 * `FComputeParagraphHeight`
@@ -320,7 +320,7 @@ NewtonScrip Native Code Support (717006)
 * `FCountPoints`
 * `FCountStrokes`
 * `FCountUnitStrokes`
-* `FCurrentException`
+* `FCurrentException`: part of _newt64_
 * `FCurrentExports`
 * `FCurrentImports`
 * `FCursorClone`
@@ -344,7 +344,7 @@ NewtonScrip Native Code Support (717006)
 * `FDecibelsToVolume`
 * `FDecodeRichString__FRC6RefVarN21`
 * `FDeepClone`
-* `FDefGlobalFn`
+* `FDefGlobalFn`: part of _newt64_
 * `FDeinstallPackage`
 * `FDeleteStoreObject`
 * `FDeleteX`
@@ -380,7 +380,7 @@ NewtonScrip Native Code Support (717006)
 * `FDropHilites`
 * `FEffectX`
 * `FEnablePowerStats`
-* `FEndsWith`
+* `FEndsWith`: part of _newt64_
 * `FEnsureInternal`
 * `FEntryCachedObject`
 * `FEntryChange`
@@ -405,7 +405,7 @@ NewtonScrip Native Code Support (717006)
 * `FEntryUndoChanges`
 * `FEntryUniqueID`
 * `FEntryValid`
-* `FEqual`
+* `FEqual`: part of _newt64_ as objectEqual
 * `FEvalStringer`
 * `FEventPause`
 * `FExitBreakLoop`
@@ -413,7 +413,7 @@ NewtonScrip Native Code Support (717006)
 * `FExpandInk`
 * `FExpandTopic`
 * `FExpandUnit`
-* `FExtractByte`
+* `FExtractByte`: part of _newt64_
 * `FExtractBytes`
 * `FExtractCString`
 * `FExtractChar`
@@ -425,7 +425,7 @@ NewtonScrip Native Code Support (717006)
 * `FExtractRichStringFromParaSlots`
 * `FExtractTextRange`
 * `FExtractUniChar`
-* `FExtractWord`
+* `FExtractWord`: part of _newt64_
 * `FExtractXLong`
 * `FFilterDialog`
 * `FFindDictionaryFrame`
@@ -449,7 +449,7 @@ NewtonScrip Native Code Support (717006)
 * `FFrameDirty__FRC6RefVarT1`
 * `FFramesStringer`
 * `FFulfillImportTable`
-* `FGC`
+* `FGC`: part of _newt64_
 * `FGatherKeyCommands`
 * `FGestalt`
 * `FGesturePoint__FRC6RefVarN21`
@@ -473,7 +473,7 @@ NewtonScrip Native Code Support (717006)
 * `FGetCaretInfo`
 * `FGetChannelInputGain`
 * `FGetChannelVolume`
-* `FGetChar`
+* `FGetChar`: part of _newt64_ as getc
 * `FGetClipboard`
 * `FGetClipboardIcon`
 * `FGetDefaultFont__FRC6RefVarT1`
@@ -488,7 +488,7 @@ NewtonScrip Native Code Support (717006)
 * `FGetFontSize`
 * `FGetFrameStuff`
 * `FGetFunctionArgCount`
-* `FGetGlobals`
+* `FGetGlobals`: part of _newt64_
 * `FGetGreen`
 * `FGetHeapStats`
 * `FGetHiliteIndex`
@@ -533,13 +533,13 @@ NewtonScrip Native Code Support (717006)
 * `FGetRed`
 * `FGetRemoteWriting`
 * `FGetRichString__FRC6RefVar`
-* `FGetRoot`
+* `FGetRoot`: part of _newt64_
 * `FGetScoreArray__FRC6RefVarT1`
 * `FGetSelectionStack`
 * `FGetSerialNumber`
 * `FGetShapeInfo`
 * `FGetSiblingSlot`
-* `FGetSlot`
+* `FGetSlot`: part of _newt64_
 * `FGetSortID__FRC6RefVarT1`
 * `FGetStoreCardSlot`
 * `FGetStoreCardType`
@@ -565,7 +565,7 @@ NewtonScrip Native Code Support (717006)
 * `FGetUnitUpTime`
 * `FGetValue__FRC6RefVarN31`
 * `FGetVar`
-* `FGetVariable`
+* `FGetVariable`: part of _newt64_
 * `FGetView__FRC6RefVarT1`
 * `FGetVolume`
 * `FGetWordArray__FRC6RefVarT1`
@@ -586,9 +586,9 @@ NewtonScrip Native Code Support (717006)
 * `FHasCapability`
 * `FHasPath`
 * `FHasSiblingSlot`
-* `FHasSlot`
-* `FHasVar`
-* `FHasVariable`
+* `FHasSlot`: part of _newt64_
+* `FHasVar`: part of _newt64_
+* `FHasVariable`: part of _newt64_
 * `FHaveZones__FRC6RefVar`
 * `FHideCaret`
 * `FHideX`
@@ -617,43 +617,43 @@ NewtonScrip Native Code Support (717006)
 * `FInsertionSort`
 * `FInsetRect`
 * `FInstallPackage`
-* `FIntern`
+* `FIntern`: part of _newt64_
 * `FInvertRect`
 * `FIsAlphaNumeric`
-* `FIsArray`
-* `FIsBinary`
-* `FIsCharacter`
+* `FIsArray`: part of _newt64_
+* `FIsBinary`: part of _newt64_
+* `FIsCharacter`: part of _newt64_
 * `FIsCollapsed`
 * `FIsCommandKeystroke`
 * `FIsDirty`
 * `FIsEntryAlias`
 * `FIsEqualTone`
-* `FIsFrame`
-* `FIsFunction`
-* `FIsImmediate`
+* `FIsFrame`: part of _newt64_
+* `FIsFunction`: part of _newt64_
+* `FIsImmediate`: part of _newt64_
 * `FIsInkChar`
-* `FIsInstance`
-* `FIsInteger`
+* `FIsInstance`: part of _newt64_
+* `FIsInteger`: part of _newt64_
 * `FIsKeyDown`
 * `FIsLargeBinary`
 * `FIsMagicPtr`
 * `FIsNativeFunction`
-* `FIsNumber`
+* `FIsNumber`: part of _newt64_
 * `FIsPackage`
 * `FIsPathExpr`
 * `FIsPrimShape`
 * `FIsProtocolPartInUse`
 * `FIsProxyEntry`
 * `FIsPtInRect`
-* `FIsReadOnly`
-* `FIsReal`
+* `FIsReadOnly`: part of _newt64_
+* `FIsReal`: part of _newt64_
 * `FIsRichString__FRC6RefVarT1`
 * `FIsSameEntry`
 * `FIsSoupEntry`
-* `FIsString`
-* `FIsSubclass`
+* `FIsString`: part of _newt64_
+* `FIsSubclass`: part of _newt64_
 * `FIsSubexception`
-* `FIsSymbol`
+* `FIsSymbol`: part of _newt64_
 * `FIsTabletCalibrationNeeded`
 * `FIsValid`
 * `FIsValidDate__FRC6RefVarT1`
@@ -676,7 +676,7 @@ NewtonScrip Native Code Support (717006)
 * `FLBRollback`
 * `FLFetch`
 * `FLSearch`
-* `FLShift`
+* `FLShift`: part of _newt64_ as ShiftLeft
 * `FLayoutTableX`
 * `FLayoutVerticallyX`
 * `FLength`
@@ -685,7 +685,7 @@ NewtonScrip Native Code Support (717006)
 * `FLessOrGreater`
 * `FLessThan`
 * `FListBottom`
-* `FLoad`
+* `FLoad`: part of _newt64_
 * `FLoadFontCache`
 * `FLoadOnlinePackage__FRC6RefVar`
 * `FLocalBoxX`
@@ -694,7 +694,7 @@ NewtonScrip Native Code Support (717006)
 * `FLongDateStr__FRC6RefVarN21`
 * `FLookupCompletions`
 * `FLookupWord__FRC6RefVarT1`
-* `FMakeBinary`
+* `FMakeBinary`: part of _newt64_
 * `FMakeBitmap`
 * `FMakeCompactFont`
 * `FMakeDragRef`
@@ -730,7 +730,7 @@ NewtonScrip Native Code Support (717006)
 * `FMergeWordInfo`
 * `FMin`
 * `FMinimumBatteryCheck`
-* `FMod`
+* `FMod`: part of _newt64_
 * `FModalDialog`
 * `FModalRecognitionOff`
 * `FModalRecognitionOn`
@@ -754,7 +754,7 @@ NewtonScrip Native Code Support (717006)
 * `FNTKDownload`
 * `FNTKListener`
 * `FNTKSend`
-* `FNegate`
+* `FNegate`: part of _newt64_
 * `FNewByName`
 * `FNewIterator`
 * `FNewProtocol`
@@ -768,7 +768,7 @@ NewtonScrip Native Code Support (717006)
 * `FNot`
 * `FNumInkWordsInRange`
 * `FNumberStr__FRC6RefVarT1`
-* `FORD`
+* `FORD`: part of _newt64_
 * `FObjectPid`
 * `FObjectPkgRef`
 * `FOffsetCorrectionInfo`
@@ -781,12 +781,12 @@ NewtonScrip Native Code Support (717006)
 * `FOtherViewInUse`
 * `FPackRGB`
 * `FParaContainsInk`
-* `FParamStr__FRC6RefVarN21`
+* `FParamStr__FRC6RefVarN21`: part of _newt64_
 * `FParentX`
 * `FPenPos`
 * `FPendingImports`
-* `FPerform`
-* `FPerformIfDefined`
+* `FPerform`: part of _newt64_
+* `FPerformIfDefined`: part of _newt64_
 * `FPickViewGetScollerValues`
 * `FPickViewKeyDown`
 * `FPickViewScroll`
@@ -812,11 +812,11 @@ NewtonScrip Native Code Support (717006)
 * `FPowerOff`
 * `FPreInitSerialDebugging`
 * `FPrevMeeting__FRC6RefVarN21`
-* `FPrimClassOf`
-* `FPrint`
+* `FPrimClassOf`: part of _newt64_
+* `FPrint`: part of _newt64_
 * `FProcessBuiltinCommand`
-* `FProtoPerform`
-* `FProtoPerformIfDefined`
+* `FProtoPerform`: part of _newt64_
+* `FProtoPerformIfDefined`: part of _newt64_
 * `FProtocolImplementationName`
 * `FProtocolInterfaceName`
 * `FProtocolSignature`
@@ -828,7 +828,7 @@ NewtonScrip Native Code Support (717006)
 * `FQuickLookDone`
 * `FQuickSort`
 * `FQuickSort`
-* `FRShift`
+* `FRShift`: part of _newt64_ as ShiftRight
 * `FRandom`
 * `FReadCursiveOptions__FRC6RefVar`
 * `FReadStoreObject`
@@ -842,8 +842,8 @@ NewtonScrip Native Code Support (717006)
 * `FRecognizeTextInStyles`
 * `FRectsOverlap`
 * `FRedoChildrenX`
-* `FRef`
-* `FRefOf`
+* `FRef`: part of _newt64_
+* `FRefOf`: part of _newt64_
 * `FRefreshViews__FRC6RefVar`
 * `FRegisterGestalt`
 * `FRegisterOpenKeyboard`
@@ -851,7 +851,7 @@ NewtonScrip Native Code Support (717006)
 * `FRemove1XPackage`
 * `FRemoveAutoAdd`
 * `FRemoveCorrectionInfo`
-* `FRemoveSlot`
+* `FRemoveSlot`: part of _newt64_
 * `FRemoveStepView__FRC6RefVarN21`
 * `FRemoveToggledEntries`
 * `FRemoveView__FRC6RefVarN21`
@@ -863,11 +863,11 @@ NewtonScrip Native Code Support (717006)
 * `FResolveEntryAlias`
 * `FRestoreKeyView`
 * `FRestorePatchPackage`
-* `FRethrow`
+* `FRethrow`: part of _newt64_
 * `FRevealEffectX`
 * `FRosettaExtension`
 * `FRunInitScripts__FRC6RefVar`
-* `FSPrintObject__FRC6RefVarT1`
+* `FSPrintObject__FRC6RefVarT1`: part of _newt64_
 * `FScaleShape`
 * `FScanNextWord`
 * `FScanPrevWordEnd`
@@ -888,7 +888,7 @@ NewtonScrip Native Code Support (717006)
 * `FSetChar`
 * `FSetClass`
 * `FSetClipboard`
-* `FSetContains`
+* `FSetContains`: part of _newt64_
 * `FSetDebugMode`
 * `FSetDictionaryData__FRC6RefVarN21`
 * `FSetDifference`
@@ -906,7 +906,7 @@ NewtonScrip Native Code Support (717006)
 * `FSetKeyView__FRC6RefVarN21`
 * `FSetLCDContrast__FRC6RefVarT1`
 * `FSetLearningData__FRC6RefVarT1`
-* `FSetLength`
+* `FSetLength`: part of _newt64_
 * `FSetLetterWeights__FRC6RefVarT1`
 * `FSetLocale__FRC6RefVarT1`
 * `FSetOnlineDisconnect__FRC6RefVarT1`
@@ -921,7 +921,7 @@ NewtonScrip Native Code Support (717006)
 * `FSetRandomState`
 * `FSetRemoteWriting`
 * `FSetRemove`
-* `FSetSlot`
+* `FSetSlot`: part of _newt64_
 * `FSetSortID__FRC6RefVarT1`
 * `FSetStoreObjectSize`
 * `FSetSysAlarm`
@@ -929,7 +929,7 @@ NewtonScrip Native Code Support (717006)
 * `FSetTimeInSeconds`
 * `FSetUnion`
 * `FSetValue__FRC6RefVarN31`
-* `FSetVariable`
+* `FSetVariable`: part of _newt64_
 * `FSetVolume`
 * `FSetWordInfoFlags`
 * `FSetWordList`
@@ -974,15 +974,15 @@ NewtonScrip Native Code Support (717006)
 * `FStoreAbort`
 * `FStrCompare`
 * `FStrConcat__FRC6RefVarN21`
-* `FStrEqual__FRC6RefVarN21`
-* `FStrExactCompare__FRC6RefVarN21`
+* `FStrEqual__FRC6RefVarN21`: part of _newt64_
+* `FStrExactCompare__FRC6RefVarN21`: part of _newt64_
 * `FStrFilled`
 * `FStrFontWidth__FRC6RefVarN21`
 * `FStrHexDump__FRC6RefVarN21`
-* `FStrLen__FRC6RefVarT1`
+* `FStrLen__FRC6RefVarT1`: part of _newt64_
 * `FStrMunger`
-* `FStrPos`
-* `FStrReplace`
+* `FStrPos`: part of _newt64_
+* `FStrReplace`: part of _newt64_
 * `FStrTruncate__FRC6RefVarN21`
 * `FStrWidth__FRC6RefVarT1`
 * `FStringFilter`
@@ -1010,12 +1010,12 @@ NewtonScrip Native Code Support (717006)
 * `FStyleArrayContainsInk__FRC6RefVarT1`
 * `FStyledStrTruncate__FRC6RefVarN31`
 * `FSubstituteChars`
-* `FSubstr`
+* `FSubstr`: part of _newt64_
 * `FSubtract`
 * `FSuckPackageFromBinary`
 * `FSuckPackageFromEnpoint`
 * `FSuckPackageOffDeskTop`
-* `FSymbolCompareLex`
+* `FSymbolCompareLex`: part of _newt64_
 * `FSymbolName`
 * `FSyncChildrenX`
 * `FSyncScrollX`
@@ -1078,7 +1078,7 @@ NewtonScrip Native Code Support (717006)
 * `FTestWordInfoFlags`
 * `FTextBounds`
 * `FTextBox`
-* `FThrow`
+* `FThrow`: part of _newt64_
 * `FTicks__FRC6RefVar`
 * `FTieViews__FRC6RefVarN31`
 * `FTimeFrameStr`
@@ -1090,7 +1090,7 @@ NewtonScrip Native Code Support (717006)
 * `FTopicBottom`
 * `FTopicByName`
 * `FTopicIndexToView`
-* `FTotalClone`
+* `FTotalClone`: part of _newt64_
 * `FTotalMinutes__FRC6RefVarT1`
 * `FTrackButtonX`
 * `FTrackHiliteX`
